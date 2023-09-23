@@ -125,14 +125,13 @@ section {
     align-items: center;
 }
 
-
 .nav-contacts-list .item:not(:last-child) {
     margin-right: 30px;
 }
 
 .nav-menu-link,
 .nav-contacts-link {
-    display: block;
+    display: flex;
     padding-top: 32px;
     padding-bottom: 32px;
     font-weight: 500;
@@ -174,7 +173,6 @@ section {
 .current-page {
     color: var(--primary-color);
 }
-
 
 
 /* Section Hero */
@@ -418,8 +416,7 @@ section {
 .portfilio-examples-list {
     display: flex;
     flex-wrap: wrap;
-
-    justify-content: center;
+    margin-bottom: -30px;
 }
 
 .portfolio-item:not(:nth-child(3n)) {
