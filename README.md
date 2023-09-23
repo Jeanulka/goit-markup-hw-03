@@ -1,6 +1,6 @@
 # goit-markup-hw-03
 
-Homework-04
+Homework-03
 
 Версія: 1.0
 Створи репозиторій goit-markup-hw-03.
