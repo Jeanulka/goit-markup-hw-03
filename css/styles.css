@@ -36,6 +36,9 @@ a {
     text-decoration: none;
 }
 
+img {
+    display: block;
+}
 
 /* Загальні стилі для body та його елементів */
 body {
@@ -73,6 +76,20 @@ section {
     margin-bottom: 50px;
 }
 
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
 /* Стиль для Логотип */
 .logo {
     color: var(--primary-color);
@@ -90,15 +107,12 @@ section {
     color: var(--secondary-color);
 }
 
-
-
 /* Header */
 .header .container {
     display: flex;
 }
 
 .header {
-    display: flex;
     border-bottom: 1px solid #ECECEC;
 }
 
@@ -112,7 +126,7 @@ section {
     display: flex;
 }
 
-.header .link.logo {
+.header .logo {
     margin-right: 93px;
 }
 
@@ -179,37 +193,45 @@ section {
 .hero {
     background: url(../images/hero/Hero-Img.jpg) no-repeat center;
     background-size: cover;
-
+    padding-top: 200px;
+    padding-bottom: 200px;
 
     color: var(--secondary-color);
     text-align: center;
 }
 
 .hero-title {
+    margin-top: 0;
+    margin-right: auto;
+    margin-bottom: 30px;
+    margin-left: auto;
+
     font-size: 44px;
     font-weight: 900;
     line-height: 1.36;
     letter-spacing: 2.64px;
     text-transform: uppercase;
     width: 696px;
-    margin: 0 auto;
-    padding-top: 200px;
-    padding-bottom: 30px;
 }
 
 .hero .btn {
+    display: inline-block;
+    padding-top: 10px;
+    padding-right: 32px;
+    padding-bottom: 10px;
+    padding-left: 32px;
+
     background-color: var(--primary-color);
     border: none;
     border-radius: 4px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
     color: var(--secondary-color);
-    padding: 10px 32px;
+
     text-align: center;
     font-weight: 700;
     line-height: 1.88;
     letter-spacing: 0.96px;
-    display: inline-block;
-    margin-bottom: 200px;
+
 }
 
 .hero .btn:active,
@@ -219,6 +241,9 @@ section {
 }
 
 /* Section Our features */
+.features {
+    padding-bottom: 0;
+}
 
 .features-subtitle {
     color: var(--title-color);
@@ -247,7 +272,6 @@ section {
 .features-list-item:not(:nth-child(4n)) {
     margin-right: 30px;
 }
-
 
 .features-list-icon {
     padding-top: 25px;
@@ -283,22 +307,25 @@ section {
 .team .list {
     display: flex;
     flex-wrap: wrap;
+
 }
 
-.team-item {
+.team .item {
     width: calc((100% - 90px) / 4);
     box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    background-color: var(--secondary-color);
 }
 
-.team-item:not(:nth-child(4n)) {
+.team .item:not(:nth-child(4n)) {
     margin-right: 30px;
 }
 
-.member-pic {
-    margin-bottom: 30px;
+.team .member-description {
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
-.team-member {
+.team .member-name {
     margin-bottom: 10px;
     color: var(--title-color);
     font-size: 16px;
@@ -308,20 +335,20 @@ section {
     text-align: center;
 }
 
-.team-position {
-    margin-bottom: 28px;
+.team .member-position {
+    margin-bottom: 16px;
     font-size: 16px;
     line-height: 1.2;
     letter-spacing: 0.48px;
     text-align: center;
 }
 
-.team .item-social {
+.team .member-social {
     display: flex;
     flex-wrap: wrap;
     margin-left: 32px;
     margin-right: 32px;
-    margin-bottom: 30px;
+
     justify-content: space-between;
 }
 
@@ -434,22 +461,20 @@ section {
 }
 
 .portfolio-pic-descript {
+    padding-top: 20px;
+    padding-right: 24px;
+    padding-bottom: 20px;
+    padding-left: 24px;
+
+    border-right: 1px solid #EEE;
     border-bottom: 1px solid #EEE;
     border-left: 1px solid #EEE;
-    border-right: 1px solid #EEE;
-    background: #FFF;
-    padding-top: 20px;
-}
 
-.portfolio-pic {
-    display: block;
+    background: #FFF;
 }
 
 .portfolio-project-name {
-    padding-left: 24px;
-    padding-right: 24px;
     margin-bottom: 4px;
-
     color: var(--title-color);
     font-size: 18px;
     font-weight: 700;
@@ -458,9 +483,6 @@ section {
 }
 
 .portfolio-area {
-    padding-left: 24px;
-    padding-right: 24px;
-    margin-bottom: 24px;
     color: var(--text-color);
     font-size: 16px;
     line-height: 1.88;
@@ -471,21 +493,22 @@ section {
 /* Footer */
 footer {
     background-color: var(--background-secondary-color);
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 
 .footer>.container {
     display: flex;
     flex-wrap: wrap;
-    align-items: first baseline;
-    padding-top: 60px;
-    padding-bottom: 60px;
+    align-items: baseline;
+
 }
 
 .footer .left-part {
     margin-right: 70px;
 }
 
-.footer .link.logo {
+.footer .logo {
     display: block;
     margin-bottom: 20px;
 }
@@ -501,14 +524,21 @@ footer {
     color: var(--secondary-color);
 }
 
-.footer .address-link {
-    display: block;
+.footer .address-item {
     margin-bottom: 9px;
+}
+
+.footer .address-item:last-child {
+    margin-bottom: 0;
+}
+
+.footer .link {
+    display: block;
     color: rgba(255, 255, 255, 0.6);
 }
 
-.footer .address-link:hover,
-.footer .address-link:focus {
+.footer .link:hover,
+.footer .link:focus {
     color: var(--primary-color);
 }
 
